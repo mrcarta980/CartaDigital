@@ -125,6 +125,16 @@ button.desplegable:hover {
     padding: 0 10px;
 }
 
+.contenido ul {
+    font-family: 'Montserrat', Arial, sans-serif; /* Usa Montserrat como fuente principal */
+    margin: 0;
+    padding: 0;
+}
+.contenido li {
+    font-family: 'Montserrat', Arial, sans-serif; /* Usa Montserrat como fuente principal */
+    margin: 0;
+    padding: 0;
+}
 .contenido.abierto {
     max-height: 500px; /* Ajusta este valor según el contenido máximo */
     padding: 10px;
