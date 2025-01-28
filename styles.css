@@ -1,0 +1,379 @@
+/* Estilos para el nuevo encabezado */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #5f5f5f8f; /* Fondo oscuro para el encabezado */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+}
+
+.redes-sociales a {
+    color: rgb(248, 248, 248); /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #4CAF50; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos responsive para el encabezado */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px; /* Tamaño más pequeño para móviles */
+    }
+
+    .redes-sociales {
+        margin-top: 10px;
+    }
+
+    .redes-sociales a {
+        font-size: 20px; /* Tamaño más pequeño para móviles */
+    }
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif; /* Usa Montserrat como fuente principal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco por defecto */
+}
+
+header {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura fija para el banner */
+    overflow: hidden;
+}
+
+
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+button.desplegable {
+    background-color: #5c5b5b;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px 0;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px; /* Esquinas muy redondeadas */
+    transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+button.desplegable::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Color del borde animado */
+    transition: left 0.3s ease; /* Transición suave */
+    z-index: 1;
+}
+
+button.desplegable:hover::before {
+    left: 0; /* Anima el borde de izquierda a derecha */
+}
+
+button.desplegable:hover {
+    color: #fff; /* Cambia el color del texto si es necesario */
+}
+
+.contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 10px;
+}
+
+.contenido.abierto {
+    max-height: 500px; /* Ajusta este valor según el contenido máximo */
+    padding: 10px;
+}
+
+.precio {
+    color: green; /* Color verde para los precios */
+    float: right; /* Precios a la derecha */
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer .info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer .info h2 {
+    color: #ff4444; /* Títulos en rojo no muy claro */
+}
+
+.mapa {
+    margin-top: 20px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    filter: invert(100%); /* Invierte los colores */
+    background-color: black; /* Fondo negro */
+}
+
+/* Contenedor principal del carrusel */
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura por defecto para pantallas grandes */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de los slides */
+.carrusel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Estilos para cada slide */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Estilos para la imagen de fondo del slide */
+.slide .imagen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.slide.active {
+    display: block;
+}
+
+.slide:not(.active) {
+    display: none;
+}
+
+/* Estilos para la descripción del slide */
+.slide .descripcion {
+    position: absolute;
+    top: 50%; /* Coloca el borde superior en el centro */
+    left: 50%; /* Coloca el borde izquierdo en el centro */
+    transform: translate(-50%, -50%); /* Centra el contenido */
+    width: 80%; /* Ancho de la descripción */
+    max-width: 600px; /* Ancho máximo para evitar que ocupe toda la pantalla */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+/* Contenedor de los indicadores (puntos de navegación) */
+.indicadores {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilos para cada indicador */
+.indicador {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para el indicador activo */
+.indicador.active {
+    background-color: #4CAF50;
+}
+
+/* Efecto hover para los indicadores */
+.indicador:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries para hacer el carrusel responsive */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .carrusel-container {
+        height: 300px; /* Altura reducida para tablets */
+    }
+
+    .slide .descripcion {
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        padding: 10px;
+    }
+
+    .indicador {
+        width: 10px;
+        height: 10px; /* Indicadores más pequeños */
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .carrusel-container {
+        height: 200px; /* Altura reducida para móviles */
+    }
+
+    .slide .descripcion {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+        padding: 8px;
+    }
+
+    .indicador {
+        width: 8px;
+        height: 8px; /* Indicadores más pequeños */
+    }
+}
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .slide .descripcion {
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        padding: 15px;
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .slide .descripcion {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+        padding: 10px;
+        width: 90%; /* Ocupa más ancho en móviles */
+    }
+}
+
+
+/* Estilos para el título "Carta Digital" */
+.titulo-carta {
+    text-align: center; /* Centra el texto */
+    padding: 20px 0; /* Espaciado superior e inferior */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.titulo-carta h1 {
+    font-family: 'Montserrat', sans-serif; /* Usa la misma fuente que el resto de la página */
+    font-size: 36px; /* Tamaño grande para escritorio */
+    font-weight: 700; /* Negrita */
+    margin: 0; /* Elimina el margen por defecto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Media Queries para hacer el título responsive */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .titulo-carta h1 {
+        font-size: 28px; /* Tamaño más pequeño para tablets */
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .titulo-carta h1 {
+        font-size: 24px; /* Tamaño más pequeño para móviles */
+        letter-spacing: 1px; /* Menos espaciado entre letras */
+    }
+}
+.titulo-carta h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra al texto */
+}
+.titulo-carta {
+    border-bottom: 2px solid #f8f8f8; /* Borde inferior verde */
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.titulo-carta {
+    animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    position: fixed; /* Fija el botón en la pantalla */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #25D366; /* Color de WhatsApp */
+    color: white; /* Color del ícono */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    border-radius: 50%; /* Forma circular */
+    text-align: center; /* Centra el ícono */
+    font-size: 25px; /* Tamaño del ícono */
+    line-height: 50px; /* Alinea verticalmente el ícono */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Efecto de escala al hacer hover */
+}
