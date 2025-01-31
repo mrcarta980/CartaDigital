@@ -214,3 +214,35 @@ setInterval(() => {
     slideIndex = (slideIndex + 1) % document.querySelectorAll('.slide').length;
     actualizarCarrusel();
 }, 5000);
+
+// Obtener elementos del DOM
+const publicidadModal = document.getElementById("publicidad-modal");
+const cerrarPublicidad = document.querySelector(".cerrar-publicidad");
+const botonPublicidad = document.getElementById("boton-publicidad");
+
+// Mostrar la publicidad al cargar la página
+window.addEventListener("load", () => {
+    publicidadModal.classList.add("mostrar");
+});
+
+// Cerrar la publicidad al hacer clic en la "X"
+cerrarPublicidad.addEventListener("click", () => {
+    publicidadModal.classList.remove("mostrar");
+});
+
+// Mostrar la publicidad al hacer clic en el botón flotante
+botonPublicidad.addEventListener("click", () => {
+    publicidadModal.classList.add("mostrar");
+});
+
+// Cerrar la publicidad al hacer clic fuera de la imagen
+window.addEventListener("click", (event) => {
+    if (event.target === publicidadModal) {
+        publicidadModal.classList.remove("mostrar");
+    }
+});
+//window.addEventListener("load", () => {
+ //   setTimeout(() => {
+ //       publicidadModal.classList.add("mostrar");
+  //  }, 3000); // Mostrar después de 3 segundos
+//});

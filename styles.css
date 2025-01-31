@@ -503,6 +503,87 @@ input::placeholder {
     transform: scale(1.1); /* Aumenta el tamaño */
 }
 
+/* Estilos para el modal de publicidad */
+.modal-publicidad {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000; /* Por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #070707e6; /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-publicidad.mostrar {
+    display: flex; /* Mostrar el modal */
+}
+
+/* Estilos para la imagen de publicidad */
+.imagen-publicidad {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    animation: aparecer 0.5s ease; /* Animación de aparición */
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Estilos para el botón de cerrar publicidad */
+.cerrar-publicidad {
+    position: absolute;
+    top: 90px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar-publicidad:hover {
+    color: #ff4444; /* Cambia el color a rojo al pasar el mouse */
+}
+
+/* Estilos para el botón flotante de publicidad */
+.boton-flotante {
+    position: fixed;
+    left: 20px; /* Posición en el lado izquierdo */
+    bottom: 300px; /* Posición en la parte inferior */
+    background-color: #545d2e; /* Color de WhatsApp */
+    color: rgb(2, 2, 2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px #e67e22;
+    z-index: 1000; /* Por encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-flotante:hover {
+    background-color: #454d25; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Efecto de escala */
+}
+/* Estilos para la imagen personalizada */
+.icono-publicidad {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    height: 40px;
+}  
+
+.boton-flotante i {
+    animation: latido 1s infinite; /* Animación de latido */
+}
+
+
 /* Estilos para el pie de página */
 footer {
     background: #545d2e url("img/backraoudcolor/brick-wall-dark.png"); /* Fondo oscuro */
@@ -550,6 +631,12 @@ footer {
 }
     
     /* Media Queries para diseño responsive */
+    @keyframes latido {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+    
     /* Media Queries para responsive design */
     @media (max-width: 600px) {
         .container {
