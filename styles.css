@@ -207,7 +207,7 @@ button.desplegable:hover {
 /* Efecto hover en los productos */
 .contenido li.producto:hover {
     background-color: #333; /* Fondo oscuro al pasar el mouse */
-    color: #28a745; /* Color verde para el texto */
+    color: #d35400; /* Color verde para el texto */
 }
 .contenido {
     max-height: 0; /* Altura inicial (oculto) */
