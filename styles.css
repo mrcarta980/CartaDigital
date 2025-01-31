@@ -220,7 +220,7 @@ button.desplegable:hover {
 .contenido.abierto {
     max-height: 500px; /* Altura máxima */
     padding: 10px; /* Relleno interno */
-    background:#545d2e98 url("img/backraoudcolor/brick-wall-dark.png")
+    background:#545d2eb6 url("img/backraoudcolor/brick-wall-dark.png")
 }
 
 /* Estilos para los productos */
@@ -228,7 +228,7 @@ button.desplegable:hover {
     display: flex; /* Usa flexbox para alinear elementos */
     justify-content: space-between; /* Espacia los elementos */
     align-items:center; /* Centra verticalmente */
-    padding: 12px; /* Relleno interno */
+    padding: 19px; /* Relleno interno */
     border-bottom: 1px solid #545d2e; /* Borde inferior */
     cursor: pointer; /* Cambia el cursor al pasar */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
@@ -236,8 +236,8 @@ button.desplegable:hover {
 
 /* Estilos para el nombre del producto */
 .nombre-producto {
-    flex: 3; /* Ocupa el espacio disponible */
-    margin-right: 150px; /* Margen derecho */
+    flex: 4; /* Ocupa el espacio disponible */
+    margin-right: 100px; /* Margen derecho */
 }
 
 /* Estilos para el precio */

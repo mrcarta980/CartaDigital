@@ -47,34 +47,13 @@ window.addEventListener("click", (event) => {
         modal.classList.remove("mostrar");
     }
 });
-
-// Mostrar u ocultar secciones según el tipo de entrega
-document.addEventListener("DOMContentLoaded", function () {
-    const opcionesEntrega = document.querySelectorAll('input[name="tipo-entrega"]');
-    const seccionMesa = document.getElementById("seccion-mesa");
-    const seccionDomicilio = document.getElementById("seccion-domicilio");
-    const enviarPedidoBtn = document.getElementById("enviar-pedido");
-
-    opcionesEntrega.forEach((opcion) => {
-        opcion.addEventListener("change", function () {
-            if (this.value === "mesa") {
-                seccionMesa.style.display = "block";
-                seccionDomicilio.style.display = "none";
-            } else if (this.value === "domicilio") {
-                seccionMesa.style.display = "none";
-                seccionDomicilio.style.display = "block";
-            }
-        });
-    });
-});
-
 // Array para almacenar los productos del pedido
 let pedido = [];
 
 // Obtener elementos del DOM
 const listaPedido = document.getElementById("lista-pedido");
 const totalPedido = document.getElementById("total-pedido");
-const enviarPedidoBtn = document.getElementById("enviar-pedido");
+
 
 // Función para actualizar la lista del pedido
 function actualizarPedido() {
@@ -130,7 +109,26 @@ function eliminarProducto(index) {
     actualizarPedido(); // Actualizar la lista
 }
 
-////////////////////////////////////////////////////////////////////////////////////
+
+// Obtener elementos del DOM
+const opcionesEntrega = document.querySelectorAll('input[name="tipo-entrega"]');
+const seccionMesa = document.getElementById("seccion-mesa");
+const seccionDomicilio = document.getElementById("seccion-domicilio");
+const enviarPedidoBtn = document.getElementById("enviar-pedido");
+
+// Mostrar u ocultar secciones según el tipo de entrega
+opcionesEntrega.forEach(opcion => {
+    opcion.addEventListener("change", () => {
+        if (opcion.value === "mesa") {
+            seccionMesa.style.display = "block";
+            seccionDomicilio.style.display = "none";
+        } else if (opcion.value === "domicilio") {
+            seccionMesa.style.display = "none";
+            seccionDomicilio.style.display = "block";
+        }
+    });
+});
+
 // Función para enviar el pedido por WhatsApp
 enviarPedidoBtn.addEventListener("click", () => {
     // Obtener el tipo de entrega seleccionado
