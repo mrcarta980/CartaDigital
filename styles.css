@@ -604,7 +604,7 @@ footer {
         .header-top {
             flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
             align-items: center; /* Centra los elementos */
-            padding: 10px; /* Reduce el relleno */
+            padding: 100%; /* Reduce el relleno */
         }
     
         .logo img {
