@@ -1,114 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- git add .-->
-    <!-- git commit -m "cambios"-->
-    <!-- git push--> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta del Restaurante</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Agregar FontAwesome para los iconos de redes sociales -->  
+    <!-- FontAwesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-                <!-- Título "Carta Digital" -->
-                <div class="titulo-carta">
-                    <h1>Carta Digital</h1>
-                </div>
-        <!-- Nuevo contenedor para el logo y redes sociales -->
+        <!-- Título de la carta -->
+        <div class="titulo-carta">
+            <h1>Carta Digital</h1>
+            <H3>EL RETIRO</H3>
+        </div>
+        <!-- Encabezado con logo y redes sociales -->
         <div class="header-top">
             <div class="logo">
-                <img src="img/Nueva carpeta/logo_vertical_frutos.png" alt="Logo del Restaurante">
+                <img src="img/logonuevo.jpeg" alt="Logo del Restaurante">
             </div>
             <div class="redes-sociales">
-                <a href="https://facebook.com" target="https://www.facebook.com/frutosdelparaiso/"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com" target="https://www.instagram.com/frutosdelparaisotropical/?hl=es"><i class="fab fa-instagram"></i></a>
-                <!--<a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>-->
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!--  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>-->
             </div>
         </div>
-                <!-- Banner y carrusel (código existente) -->
-                
-                    <div class="carrusel-container">
-                        <div class="carrusel">
-                            <div class="slide active">
-                                <div class="imagen" style="background-image: url('img/ENTRADA\ PATACON.png');"></div>
-                                <div class="descripcion">Hoy!! Menu 1, Paisa Montañero</div>
-                            </div>
-                            <div class="slide">
-                                <div class="imagen" style="background-image: url('img/ENTRADA\ AREPITAS.png');"></div>
-                                <div class="descripcion">Hoy!! Menu 2, Comida de la abuela</div>
-                            </div>
-                        </div>
-                        <div class="indicadores">
-                            <span class="indicador active" onclick="mostrarSlideManual(0)"></span>
-                            <span class="indicador" onclick="mostrarSlideManual(1)"></span>
-                        </div>
-                    </div>
-
-                
-                    </div>
+        <!-- Carrusel de promociones -->
+        <div class="carrusel-container">
+            <div class="carrusel">
+                <div class="slide active">
+                    <div class="imagen" style="background-image: url('img/ENTRADA PATACON.png');"></div>
+                    <div class="descripcion">Promoción 1: Descuento del 20% en todas las entradas.</div>
                 </div>
-            </header>
+                <div class="slide">
+                    <div class="imagen" style="background-image: url('img/ENTRADA AREPITAS.png');"></div>
+                    <div class="descripcion">Promoción 2: Lleva 2 platos principales y paga 1.</div>
+                </div>
+            </div>
+            <div class="indicadores">
+                <span class="indicador active" onclick="mostrarSlideManual(0)"></span>
+                <span class="indicador" onclick="mostrarSlideManual(1)"></span>
+            </div>
+        </div>
+    </header>
+
     <main>
+        <!-- Sección de botones desplegables -->
         <div class="botones">
             <button class="desplegable">Entradas</button>
             <div class="contenido">
                 <ul>
-                    <li>Entrada 1 - <span class="precio">$10</span></li>
-                    <li>Entrada 2 - <span class="precio">$12</span></li>
-                    <li>Entrada 3 - <span class="precio">$15</span></li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <!-- Repite para más productos -->
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
                 </ul>
             </div>
-
-            <button class="desplegable">Hamburguesas</button>
+            <!-- Repite para otras secciones (Platos Principales, Postres, etc.) -->
+        </div>
+        <div class="botones">
+            <button class="desplegable">Entradas</button>
             <div class="contenido">
                 <ul>
-                    <li>Plato 1 - <span class="precio">$20</span></li>
-                    <li>Plato 2 - <span class="precio">$22</span></li>
-                    <li>Plato 3 - <span class="precio">$25</span></li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <!-- Repite para más productos -->
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
+                    <li class="producto" data-imagen="img/entrada1.jpg">
+                        <span class="nombre-producto">Entrada 1</span>
+                        <span class="precio">$10</span>
+                        <button class="agregar-pedido" data-producto="Entrada 1" data-precio="10">
+                            <i class="fas fa-cart-plus"></i> <!-- Ícono de carrito -->
+                        </button>
+                    </li>
                 </ul>
             </div>
+            <!-- Repite para otras secciones (Platos Principales, Postres, etc.) -->
+        </div>
 
-            <button class="desplegable">arroces</button>
-            <div class="contenido">
-                <ul>
-                    <li>Postre 1 - <span class="precio">$8</span></li>
-                    <li>Postre 2 - <span class="precio">$10</span></li>
-                    <li>Postre 3 - <span class="precio">$12</span></li>
-                </ul>
+        <!-- Sección del pedido actual -->
+        <div class="opciones-entrega">
+            <label>
+                <input type="radio" name="tipo-entrega" value="mesa" checked> En mesa
+            </label>
+            <label>
+                <input type="radio" name="tipo-entrega" value="domicilio"> A domicilio
+            </label>
+        </div>
+        
+        <div class="pedido-actual">
+            <h2>Pedido Actual</h2>
+            <h2>Mi Pedido</h2>
+            <ul id="lista-pedido">
+                <!-- Aquí se mostrarán los productos agregados -->
+            </ul>
+                <p>Total: $         <span id="total-pedido">0</span></p>
+            <div id="seccion-mesa">
+                <label for="numero-mesa">Número de mesa:</label>
+                <input type="number" id="numero-mesa" placeholder="Ej: 5">
             </div>
-
-            <button class="desplegable">Bebidas</button>
-            <div class="contenido">
-                <ul>
-                    <li>Bebida 1 - <span class="precio">$5</span></li>
-                    <li>Bebida 2 - <span class="precio">$6</span></li>
-                    <li>Bebida 3 - <span class="precio">$7</span></li>
-                </ul>
+            <div id="seccion-domicilio" style="display: none;">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" placeholder="Ej: 3001234567">
+                <label for="barrio">Barrio:</label>
+                <input type="text" id="barrio" placeholder="Ej: Centro">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" placeholder="Ej: Calle 123 #45-67">
+                <label for="nombre-completo">Nombre completo:</label>
+                <input type="text" id="nombre-completo" placeholder="Ej: Juan Pérez">
             </div>
-
-            <button class="desplegable">Especiales</button>
-            <div class="contenido">
-                <ul>
-                    <li>Especial 1 - <span class="precio">$30</span></li>
-                    <li>Especial 2 - <span class="precio">$35</span></li>
-                    <li>Especial 3 - <span class="precio">$40</span></li>
-                </ul>
-            </div>
+            <button id="enviar-pedido">Enviar Pedido por WhatsApp</button>
         </div>
     </main>
 
     <footer>
+        <!-- Información del restaurante -->
         <div class="info">
-            <h2>Frutos Del Paraiso</h2>
-            <h3>Sabores que perduran</h3>
-            <p>El Santuario, Antioquia, Colombia</p>
-            <p>Teléfono: 321 866 21 21</p>
-            <p>Horario de atención: 07:00 a.m. - 09:00 p.m.</p>
+            <h2>Información del Restaurante</h2>
+            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+            <p>Teléfono: +123 456 789</p>
+            <p>Horario: Lunes a Domingo de 12:00 - 22:00</p>
+            <h4></h4>
+            <h3></h3>
+            <h3></h3>
         </div>
+        <!-- Mapa del restaurante -->
         <div class="mapa">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.147835630485!2d-75.2659186!3d6.1389907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46a13f2ed002c1%3A0x7ec9e61dfd8b3c93!2sRestaurante%20Frutos%20del%20Para%C3%ADso!5e0!3m2!1ses!2ses!4v1697132345678!5m2!1ses!2ses"
@@ -120,12 +195,20 @@
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
+        <h5></h4>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Modal para mostrar la imagen del producto -->
+    <div id="modal" class="modal">
+        <span class="cerrar-modal">&times;</span>
+        <img id="imagen-modal" class="imagen-modal" src="" alt="Imagen del producto">
+    </div>
+
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/+573218662121?text=Hola,%20me%20gustaría%20hacer%20una%20Pedido" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script src="script.js"></script>
 </body>
 </html>

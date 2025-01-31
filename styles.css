@@ -1,389 +1,639 @@
-/* Estilos para el nuevo encabezado */
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'Montserrat', Arial, sans-serif; /* Define la fuente principal y respaldos */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    box-sizing: border-box; /* Incluye padding y bordes en el tamaño total de los elementos */
+    background: #545d2e url("img/backraoudcolor/paper.png"); /* Fondo negro */
+    color: white; /* Texto blanco */
+}
+
+/* Estilos para el encabezado superior */
 .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #5f5f5f8f; /* Fondo oscuro para el encabezado */
-    position: sticky;
-    top: 0;
+    height: auto; /* Altura del logo */
+    width: auto; /* Ancho automático para mantener la proporción */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia los elementos a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px 30px; /* Relleno interno */
+    background-color: #ccb95b9f; /* Fondo semitransparente */
+    position: sticky; /* Fija el encabezado en la parte superior */
+    top: 0; /* Posición en la parte superior */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
+/* Estilos para el logo */
 .logo img {
-    height: 50px; /* Ajusta el tamaño del logo */
-    width: auto;
+    height: 100px; /* Altura del logo */
+    width: auto; /* Ancho automático para mantener la proporción */
 }
 
+/* Estilos para los íconos de redes sociales */
 .redes-sociales {
-    display: flex;
-    gap: 15px; /* Espacio entre los iconos */
+    display: flex; /* Usa flexbox para alinear íconos */
+    gap: 15px; /* Espacio entre íconos */
 }
 
+/* Estilos para los enlaces de redes sociales */
 .redes-sociales a {
-    color: rgb(248, 248, 248); /* Color de los iconos */
-    font-size: 24px; /* Tamaño de los iconos */
-    transition: color 0.3s ease;
+    color: #fcfcfc; /* Color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
 }
 
+/* Cambia el color de los íconos al pasar el mouse */
 .redes-sociales a:hover {
-    color: #4CAF50; /* Cambia el color al pasar el mouse */
+    color: #d35400; /* Color verde */
 }
 
-/* Estilos responsive para el encabezado */
-@media (max-width: 768px) {
-    .header-top {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .logo img {
-        height: 40px; /* Tamaño más pequeño para móviles */
-    }
-
-    .redes-sociales {
-        margin-top: 10px;
-    }
-
-    .redes-sociales a {
-        font-size: 20px; /* Tamaño más pequeño para móviles */
-    }
+/* Estilos para el título de la carta */
+.titulo-carta {
+    text-align: center; /* Centra el texto */
+    padding: 20px 0; /* Relleno superior e inferior */
+    background: #ccb95bc9 url('img/backraoudcolor/paper.png'); /* Fondo semitransparente */
+    color: #545d2e ; /* Texto blanco */
+    margin-bottom: 20px; /* Margen inferior */ 
 }
 
-body {
-    font-family: 'Montserrat', Arial, sans-serif; /* Usa Montserrat como fuente principal */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: black; /* Fondo negro */
-    color: white; /* Texto blanco por defecto */
+/* Estilos para el texto del título */
+.titulo-carta h1 {
+    font-family: 'Montserrat', sans-serif; /* Fuente del título */
+    font-size: 36px; /* Tamaño del texto */
+    font-weight: 700; /* Grosor de la fuente */
+    margin: 0; /* Elimina el margen predeterminado */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
 }
-
-header {
-    position: relative;
-    text-align: center;
-    color: white;
+.titulo-carta h3 {
+    font-family: 'Montserrat', sans-serif; /* Fuente del título */
+    font-size: 30px; /* Tamaño del texto */
+    font-weight: 700; /* Grosor de la fuente */
+    margin: 0; /* Elimina el margen predeterminado */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
 }
-
-.banner {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Altura fija para el banner */
-    overflow: hidden;
-}
-
-
-
-.botones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-}
-
-button.desplegable {
-    background-color: #5c5b5b;
-    color: rgb(0, 0, 0);
-    padding: 15px;
-    width: 100%;
-    border: none;
-    text-align: center;
-    cursor: pointer;
-    margin: 5px 0;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 25px; /* Esquinas muy redondeadas */
-    transition: color 0.3s ease; /* Transición suave para el color del texto */
-}
-
-button.desplegable::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Color del borde animado */
-    transition: left 0.3s ease; /* Transición suave */
-    z-index: 1;
-}
-
-button.desplegable:hover::before {
-    left: 0; /* Anima el borde de izquierda a derecha */
-}
-
-button.desplegable:hover {
-    color: #fff; /* Cambia el color del texto si es necesario */
-}
-
-.contenido {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0 10px;
-}
-
-.contenido ul {
-    font-family: 'Montserrat', Arial, sans-serif; /* Usa Montserrat como fuente principal */
-    margin: 0;
-    padding: 0;
-}
-.contenido li {
-    font-family: 'Montserrat', Arial, sans-serif; /* Usa Montserrat como fuente principal */
-    margin: 0;
-    padding: 0;
-}
-.contenido.abierto {
-    max-height: 500px; /* Ajusta este valor según el contenido máximo */
-    padding: 10px;
-}
-
-.precio {
-    color: green; /* Color verde para los precios */
-    float: right; /* Precios a la derecha */
-}
-
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-footer .info {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-footer .info h2 {
-    color: #ff4444; /* Títulos en rojo no muy claro */
-}
-
-.mapa {
-    margin-top: 20px;
-}
-
-.mapa iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
-    border-radius: 10px;
-    filter: invert(100%); /* Invierte los colores */
-    background-color: black; /* Fondo negro */
-}
-
-/* Contenedor principal del carrusel */
+/* Estilos para el contenedor del carrusel */
 .carrusel-container {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Altura por defecto para pantallas grandes */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative; /* Posición relativa para elementos internos */
+    width: 100%; /* Ancho completo */
+    height: 400px; /* Altura fija */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
-/* Contenedor de los slides */
+/* Estilos para el carrusel */
 .carrusel {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
+    display: flex; /* Usa flexbox para alinear slides */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    transition: transform 0.5s ease; /* Transición suave al cambiar de slide */
 }
 
 /* Estilos para cada slide */
 .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    position: relative;
+    min-width: 100%; /* Ancho mínimo igual al contenedor */
+    box-sizing: border-box; /* Incluye padding y bordes en el tamaño */
+    position: relative; /* Posición relativa para elementos internos */
 }
 
-/* Estilos para la imagen de fondo del slide */
+/* Estilos para la imagen dentro del slide */
 .slide .imagen {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-size: cover; /* Ajusta la imagen al contenedor */
+    background-position: center; /* Centra la imagen */
 }
+
+/* Muestra el slide activo */
 .slide.active {
     display: block;
 }
 
+/* Oculta los slides no activos */
 .slide:not(.active) {
     display: none;
 }
 
-/* Estilos para la descripción del slide */
+/* Estilos para la descripción dentro del slide */
 .slide .descripcion {
-    position: absolute;
-    top: 50%; /* Coloca el borde superior en el centro */
-    left: 50%; /* Coloca el borde izquierdo en el centro */
-    transform: translate(-50%, -50%); /* Centra el contenido */
-    width: 80%; /* Ancho de la descripción */
-    max-width: 600px; /* Ancho máximo para evitar que ocupe toda la pantalla */
-    padding: 20px;
+    position: absolute; /* Posición absoluta para superponer texto */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro */
+    width: 80%; /* Ancho del 80% */
+    max-width: 600px; /* Ancho máximo */
+    padding: 20px; /* Relleno interno */
     background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    font-size: 18px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
-/* Contenedor de los indicadores (puntos de navegación) */
+/* Estilos para los indicadores del carrusel */
 .indicadores {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
+    position: absolute; /* Posición absoluta */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro */
+    display: flex; /* Usa flexbox para alinear indicadores */
+    gap: 10px; /* Espacio entre indicadores */
 }
 
 /* Estilos para cada indicador */
 .indicador {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 12px; /* Ancho */
+    height: 12px; /* Altura */
+    background-color: #d35400 ; /* Color semitransparente */
+    border-radius: 50%; /* Forma circular */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
-/* Estilos para el indicador activo */
+/* Cambia el color del indicador activo */
 .indicador.active {
-    background-color: #4CAF50;
+    background-color: #f2f3f2; /* Color verde */
 }
 
-/* Efecto hover para los indicadores */
+/* Cambia el color del indicador al pasar el mouse */
 .indicador:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); /* Color más claro */
 }
 
-/* Media Queries para hacer el carrusel responsive */
-
-/* Pantallas medianas (tablets) */
-@media (max-width: 768px) {
-    .carrusel-container {
-        height: 300px; /* Altura reducida para tablets */
-    }
-
-    .slide .descripcion {
-        font-size: 16px; /* Tamaño de fuente más pequeño */
-        padding: 10px;
-    }
-
-    .indicador {
-        width: 10px;
-        height: 10px; /* Indicadores más pequeños */
-    }
+/* Estilos para los botones desplegables */
+.botones {
+    display: flex; /* Usa flexbox para alinear botones */
+    flex-direction: column; /* Apila los botones verticalmente */
+    align-items: center; /* Centra los botones horizontalmente */
+    margin: 20px; /* Margen externo */
 }
 
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
-    .carrusel-container {
-        height: 200px; /* Altura reducida para móviles */
-    }
-
-    .slide .descripcion {
-        font-size: 14px; /* Tamaño de fuente más pequeño */
-        padding: 8px;
-    }
-
-    .indicador {
-        width: 8px;
-        height: 8px; /* Indicadores más pequeños */
-    }
-}
-/* Pantallas medianas (tablets) */
-@media (max-width: 768px) {
-    .slide .descripcion {
-        font-size: 16px; /* Tamaño de fuente más pequeño */
-        padding: 15px;
-    }
-}
-
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
-    .slide .descripcion {
-        font-size: 14px; /* Tamaño de fuente más pequeño */
-        padding: 10px;
-        width: 90%; /* Ocupa más ancho en móviles */
-    }
-}
-
-
-/* Estilos para el título "Carta Digital" */
-.titulo-carta {
+/* Estilos para cada botón desplegable */
+button.desplegable {
+    background-color: #ccb95b   ; /* Fondo gris */
+    color: #d35400 ; /* Texto negro */
+    padding: 15px; /* Relleno interno */
+    width: 100%; /* Ancho completo */
+    border: none; /* Sin bordes */
     text-align: center; /* Centra el texto */
-    padding: 20px 0; /* Espaciado superior e inferior */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    margin: 5px 0; /* Margen entre botones */
+    border-radius: 25px; /* Bordes redondeados */
+    transition: color 0.3s ease; /* Transición suave */
+    font-size:150% ;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0 4px 8px #0000004d; /* Sombra */
+}
+
+/* Cambia el color del texto al pasar el mouse */
+button.desplegable:hover {
+    color: #545d2e ; /* Texto blanco */
+}
+
+
+/* Estilos para el contenido desplegable */
+.contenido {
+    max-height: 0; /* Altura inicial (oculto) */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Transición suave */
+    padding: 0 10px; /* Relleno interno */
+}
+
+/* Muestra el contenido cuando está abierto */
+.contenido.abierto {
+    max-height: 500px; /* Altura máxima */
+    padding: 10px; /* Relleno interno */
+    background:#545d2e98 url("img/backraoudcolor/brick-wall-dark.png")
+}
+
+/* Estilos para los productos */
+.producto {
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia los elementos */
+    align-items:center; /* Centra verticalmente */
+    padding: 12px; /* Relleno interno */
+    border-bottom: 1px solid #545d2e; /* Borde inferior */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Estilos para el nombre del producto */
+.nombre-producto {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-right: 10px; /* Margen derecho */
+}
+
+/* Estilos para el precio */
+.precio {
+    font-weight: bold; /* Texto en negrita */
+    color: #e67e22 ; /* Color verde */
+    margin-right: 20px; /* Margen derecho */
+}
+
+/* Estilos para el botón de agregar al pedido */
+.agregar-pedido {
+    background-color: #ccb95b ; /* Fondo verde */
+    color: #d35400  ; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 8px 12px; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Cambia el color del botón al pasar el mouse */
+.agregar-pedido:hover {
+    background-color: #e67e22; /* Verde más oscuro */
+}
+
+/* Estilos para el ícono dentro del botón */
+.agregar-pedido i {
+    font-size: 16px; /* Tamaño del ícono */
+}
+
+.opciones-entrega {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.opciones-entrega label {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #ffffff ;
+    box-shadow: 0 4px 8px #ccb95b27 ; /* Sombra */
+}
+/* Estilos para la sección de pedido actual */
+.pedido-actual {
+    text-align: center;
+    margin: 20px; /* Margen externo */
+    padding: 20px; /* Relleno interno */
+    background-color: #545d2e  ; /* Fondo oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 1px 4px 8px #0000006e; /* Sombra */
+    background: #ccb95b url("img/backraoudcolor/brick-wall-dark.png");
+}
+
+/* Estilos para el título del pedido actual */
+.pedido-actual h2 {
+    margin-bottom: 20px; /* Margen inferior */
+    color: #545d2e; /* Color del texto */
+}
+
+/* Estilos para la lista de pedidos */
+#lista-pedido {
+    list-style:circle; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno predeterminado */
+}
+.pedido-actual p {
+    color: #545d2e ;
+    font-size: 180%;
+    
+}
+
+/* Estilos para cada elemento de la lista */
+#lista-pedido li {
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia los elementos */
+    margin-bottom: 10px; /* Margen inferior */
+    padding: 10px; /* Relleno interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background: #4d552b url("img/backraoudcolor/brick-wall-dark.png");
+}
+
+/* Estilos para el total del pedido */
+#total-pedido {
+    font-weight: bold; /* Texto en negrita */
+    color: #d35400 ; /* Color verde */
+}
+
+/* Estilos para las etiquetas del pedido */
+.pedido-actual label {
+    display: block; /* Hace que la etiqueta ocupe una línea */
+    margin-top: 20px; /* Margen superior */
+    font-weight: bold; /* Texto en negrita */
+    color: #fffdfd;
+}
+
+/* Estilos para el botón de eliminar producto */
+.eliminar-producto {
+    background-color: #d35400 ; /* Fondo rojo semitransparente */
+    color: #ccb95b; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 8px 12px; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    display: flex; /* Usa flexbox para alinear íconos */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Cambia el color y escala el botón al pasar el mouse */
+.eliminar-producto:hover {
+    background-color: #cc0000; /* Rojo más oscuro */
+    transform: scale(1.1); /* Aumenta el tamaño */
+}
+
+/* Estilos para el ícono dentro del botón de eliminar */
+.eliminar-producto i {
+    font-size: 16px; /* Tamaño del ícono */
+}
+
+/* Estilos para los campos de entrada en el pedido */
+.pedido-actual input[type="number"] {
+    width: 20%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    margin-bottom: 20px; /* Margen inferior */
+    border: 1px solid #e67e22 ; /* Borde */
+    background-color: #4d552b ; /* Fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #e67e22;
+    
+}
+
+/* Estilos para los inputs */
+.pedido-actual input {
+    width: 50%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d35400;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 16px;
+    color: #ffffff   ; /* Color de letra */
+    background-color: #4d552b ; /* Color de fondo */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+/* Cambios al enfocar un input */
+.pedido-actual input:focus {
+    border-color: #4CAF50;
+    background-color: #545d2e ;
+    outline: none;
+}
+
+/* Estilos para la sección de domicilio (inicialmente oculta) */
+#seccion-domicilio {
+    display: none;
+}
+
+
+/* Cambia el color del placeholder para campos requeridos */
+input:required::placeholder {
+    color: #ffffff; /* Color rojo para el placeholder */
+    opacity: 1; /* Asegura que el color sea completamente visible */
+}
+
+/* Opcional: Cambia el color del placeholder para campos no requeridos */
+input::placeholder {
+    color: #999; /* Color gris para el placeholder */
+    opacity: 1; /* Asegura que el color sea completamente visible */
+}
+
+/* Estilos para el botón de enviar pedido */
+#enviar-pedido {
+    background-color: #ccb95b  ; /* Fondo verde (WhatsApp) */
+    color: #545d2e ; /* Texto blanco */
+    padding: 10px 20px; /* Relleno interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    font-size: 20px; /* Tamaño del texto */
+    box-shadow: 0 4px 8px #ccb95b7a ; /* Sombra */
+}
+
+/* Cambia el color del botón al pasar el mouse */
+#enviar-pedido:hover {
+    background-color: #e67e22   ; /* Verde más oscuro */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    left: 0; /* Alineado a la izquierda */
+    top: 0; /* Alineado arriba */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: #545d2e ; /* Fondo oscuro semitransparente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Muestra el modal cuando tiene la clase "mostrar" */
+.modal.mostrar {
+    display: flex; /* Usa flexbox para centrar */
+}
+
+/* Estilos para la imagen dentro del modal */
+.imagen-modal {
+    max-width: 90%; /* Ancho máximo */
+    max-height: 90%; /* Altura máxima */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de cerrar el modal */
+.cerrar-modal {
+    position: absolute; /* Posición absoluta */
+    top: 20px; /* Distancia desde la parte superior */
+    right: 35px; /* Distancia desde la derecha */
     color: white; /* Color del texto */
-    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar */
 }
 
-.titulo-carta h1 {
-    font-family: 'Montserrat', sans-serif; /* Usa la misma fuente que el resto de la página */
-    font-size: 36px; /* Tamaño grande para escritorio */
-    font-weight: 700; /* Negrita */
-    margin: 0; /* Elimina el margen por defecto */
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    letter-spacing: 2px; /* Espaciado entre letras */
+/* Cambia el color del botón al pasar el mouse */
+.cerrar-modal:hover {
+    color: #ccc; /* Color gris */
 }
 
-/* Media Queries para hacer el título responsive */
-
-/* Tablets */
-@media (max-width: 768px) {
-    .titulo-carta h1 {
-        font-size: 28px; /* Tamaño más pequeño para tablets */
-    }
-}
-
-/* Móviles */
-@media (max-width: 480px) {
-    .titulo-carta h1 {
-        font-size: 24px; /* Tamaño más pequeño para móviles */
-        letter-spacing: 1px; /* Menos espaciado entre letras */
-    }
-}
-.titulo-carta h1 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra al texto */
-}
-.titulo-carta {
-    border-bottom: 2px solid #f8f8f8; /* Borde inferior verde */
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.titulo-carta {
-    animation: fadeIn 1s ease-in-out; /* Animación de aparición */
-}
-
-/* Estilos para el botón de WhatsApp */
+/* Estilos para el botón flotante de WhatsApp */
 .whatsapp-button {
-    position: fixed; /* Fija el botón en la pantalla */
+    position: fixed; /* Posición fija */
     bottom: 20px; /* Distancia desde la parte inferior */
     right: 20px; /* Distancia desde la derecha */
-    background-color: #25D366; /* Color de WhatsApp */
-    color: white; /* Color del ícono */
-    width: 50px; /* Ancho del botón */
-    height: 50px; /* Alto del botón */
+    background-color: #25D366; /* Fondo verde (WhatsApp) */
+    color: white; /* Texto blanco */
+    width: 50px; /* Ancho */
+    height: 50px; /* Altura */
     border-radius: 50%; /* Forma circular */
-    text-align: center; /* Centra el ícono */
+    text-align: center; /* Centra el texto */
     font-size: 25px; /* Tamaño del ícono */
-    line-height: 50px; /* Alinea verticalmente el ícono */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    line-height: 50px; /* Centra verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
+/* Cambia el color y escala el botón al pasar el mouse */
 .whatsapp-button:hover {
-    background-color: #128C7E; /* Cambia el color al pasar el mouse */
-    transform: scale(1.1); /* Efecto de escala al hacer hover */
+    background-color: #128C7E; /* Verde más oscuro */
+    transform: scale(1.1); /* Aumenta el tamaño */
 }
+
+/* Estilos para el pie de página */
+footer {
+    background: #545d2e url("img/backraoudcolor/brick-wall-dark.png"); /* Fondo oscuro */
+    color: #e67e22 ; /* Texto blanco */
+    padding: 20px; /* Relleno interno */
+    margin-top: 20px; /* Margen superior */
+    display: flex; /* Usa flexbox para al */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    gap: 20px; /* Espacio entre las columnas */
+    }
+    
+    /* Estilos para la sección de información en el footer */
+    footer .info {
+        flex: 1; /* Ocupa el espacio disponible */
+        min-width: 250px; /* Ancho mínimo para evitar que se comprima demasiado */
+    }
+    
+    /* Estilos para el título de la sección de información */
+    footer .info h2 {
+        color: #ee7103b7; /* Color rojo */
+        margin-bottom: 15px; /* Margen inferior */
+        box-shadow: 0 4px 8px #0000001c ; /* Sombra */
+    }
+    
+    /* Estilos para los párrafos de la sección de información */
+    footer .info p {
+        margin: 5px 0; /* Margen entre párrafos */
+    }
+    
+    /* Estilos para la sección del mapa en el footer */
+    footer .mapa {
+        flex: 1; /* Ocupa el espacio disponible */
+        min-width: 250px; /* Ancho mínimo para evitar que se comprima demasiado */
+    }
+    
+    /* Estilos para el iframe del mapa */
+    footer .mapa iframe {
+        width: 100%; /* Ancho completo */
+        height: 300px; /* Altura fija */
+        border: none; /* Sin bordes */
+        border-radius: 10px; /* Bordes redondeados */
+        filter: invert(100%); /* Invierte los colores del mapa */
+        background-color: #e67e22 ; /* Fondo negro */
+}
+    
+    /* Media Queries para diseño responsive */
+    /* Media Queries para responsive design */
+    @media (max-width: 600px) {
+        .container {
+            padding: 15px;
+        }
+
+        .opciones-entrega label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .pedido-actual input {
+            font-size: 14px;
+        }
+    }
+    /* Estilos para pantallas con un ancho máximo de 768px */
+    @media (max-width: 768px) {
+        footer {
+            flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+            align-items: center; /* Centra los elementos */
+            text-align: center; /* Centra el texto */
+        }
+    
+        footer .info,
+        footer .mapa {
+            width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+            max-width: 100%; /* Evita que se desborde */
+        }
+    
+        footer .mapa iframe {
+            height: 250px; /* Reduce la altura del mapa en pantallas pequeñas */
+        }
+    }
+    
+    /* Estilos para pantallas con un ancho máximo de 480px */
+    @media (max-width: 480px) {
+        footer .info h2 {
+            font-size: 24px; /* Reduce el tamaño del título en móviles */
+        }
+    
+        footer .info p {
+            font-size: 14px; /* Reduce el tamaño del texto en móviles */
+        }
+    
+        footer .mapa iframe {
+            height: 200px; /* Reduce aún más la altura del mapa en móviles */
+        }
+    }
+    
+    /* Estilos para el encabezado en pantallas pequeñas */
+    @media (max-width: 768px) {
+        .header-top {
+            flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+            align-items: center; /* Centra los elementos */
+            padding: 10px; /* Reduce el relleno */
+        }
+    
+        .logo img {
+            height: 170px; /* Reduce el tamaño del logo */
+        }
+    
+        .redes-sociales {
+            margin-top: 16px; /* Margen superior */
+        }
+    
+        .redes-sociales a {
+            font-size: 29px; /* Reduce el tamaño de los íconos */
+        }
+    
+        .titulo-carta h1 {
+            font-size: 40px; /* Reduce el tamaño del título */
+        }
+        .titulo-carta h3 {
+            font-size: 30px; /* Reduce el tamaño del título */
+            box-shadow: 1px 4px 8px #0000006e; /* Sombra */
+        }
+        .carrusel-container {
+            height: 300px; /* Reduce la altura del carrusel */
+        }
+    
+        .slide .descripcion {
+            font-size: 16px; /* Reduce el tamaño del texto */
+            padding: 10px; /* Reduce el relleno */
+        }
+    
+        .indicador {
+            width: 10px; /* Reduce el tamaño de los indicadores */
+            height: 10px;
+        }
+    }
+    
+    /* Estilos para pantallas muy pequeñas (móviles) */
+    @media (max-width: 480px) {
+        .titulo-carta h1 {
+            font-size: 24px; /* Reduce aún más el tamaño del título */
+            letter-spacing: 1px; /* Reduce el espaciado entre letras */
+        }
+    
+        .carrusel-container {
+            height: 200px; /* Reduce aún más la altura del carrusel */
+        }
+    
+        .slide .descripcion {
+            font-size: 14px; /* Reduce aún más el tamaño del texto */
+            padding: 8px; /* Reduce aún más el relleno */
+        }
+    
+        .indicador {
+            width: 8px; /* Reduce aún más el tamaño de los indicadores */
+            height: 8px;
+        }
+    }
