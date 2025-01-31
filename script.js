@@ -48,10 +48,12 @@ window.addEventListener("click", (event) => {
     }
 });
 
+// Mostrar u ocultar secciones según el tipo de entrega
 document.addEventListener("DOMContentLoaded", function () {
     const opcionesEntrega = document.querySelectorAll('input[name="tipo-entrega"]');
     const seccionMesa = document.getElementById("seccion-mesa");
     const seccionDomicilio = document.getElementById("seccion-domicilio");
+    const enviarPedidoBtn = document.getElementById("enviar-pedido");
 
     opcionesEntrega.forEach((opcion) => {
         opcion.addEventListener("change", function () {
@@ -104,14 +106,18 @@ function actualizarPedido() {
 document.querySelectorAll(".agregar-pedido").forEach(boton => {
     boton.addEventListener("click", (event) => {
         event.stopPropagation(); // Evitar que el evento se propague al <li>
-        const producto = boton.getAttribute("data-producto");
-        const precio = parseFloat(boton.getAttribute("data-precio"));
+
+ // Obtener el nombre del producto desde el elemento con clase "nombre-producto"
+        const nombreProducto = boton.closest(".producto").querySelector(".nombre-producto").textContent;
+      // Obtener el precio del producto desde el elemento con clase "precio"
+        const precioTexto = boton.closest(".producto").querySelector(".precio").textContent;
+        const precio = parseFloat(precioTexto.replace("$", "")); // Eliminar el símbolo "$" y convertir a número
 
         //console.log("Producto:", producto); // Depuración
         //console.log("Precio:", precio); // Depuración
 
         // Agregar el producto al array del pedido
-        pedido.push({ nombre: producto, precio: precio });
+        pedido.push({ nombre: nombreProducto, precio: precio });
 
         // Actualizar la lista del pedido
         actualizarPedido();
@@ -124,14 +130,32 @@ function eliminarProducto(index) {
     actualizarPedido(); // Actualizar la lista
 }
 
+////////////////////////////////////////////////////////////////////////////////////
 // Función para enviar el pedido por WhatsApp
 enviarPedidoBtn.addEventListener("click", () => {
-    const mesa = document.getElementById("mesa").value;
+    // Obtener el tipo de entrega seleccionado
+    const tipoEntrega = document.querySelector('input[name="tipo-entrega"]:checked').value;
 
-    // Verificar que se haya ingresado un número de mesa
-    if (!mesa) {
-        alert("Por favor, ingresa el número de mesa.");
-        return;
+    // Obtener la información de mesa o domicilio
+    let infoPedido = "";
+    if (tipoEntrega === "mesa") {
+        const numeroMesa = document.getElementById("numero-mesa").value;
+        if (!numeroMesa) {
+            alert("Por favor, ingresa el número de mesa.");
+            return;
+        }
+        infoPedido = `Número de mesa: ${numeroMesa}`;
+    } else if (tipoEntrega === "domicilio") {
+        const telefono = document.getElementById("telefono").value;
+        const barrio = document.getElementById("barrio").value;
+        const direccion = document.getElementById("direccion").value;
+        const nombreCompleto = document.getElementById("nombre-completo").value;
+
+        if (!telefono || !barrio || !direccion || !nombreCompleto) {
+            alert("Por favor, completa todos los campos de domicilio.");
+            return;
+        }
+        infoPedido = `Teléfono: ${telefono}\nBarrio: ${barrio}\nDirección: ${direccion}\nNombre: ${nombreCompleto}`;
     }
 
     // Verificar que haya productos en el pedido
@@ -141,11 +165,14 @@ enviarPedidoBtn.addEventListener("click", () => {
     }
 
     // Crear el mensaje para WhatsApp
-    let mensaje = `¡Hola! Soy el cliente de la mesa ${mesa}.\nMi pedido es:\n`;
+    let mensaje = `¡Hola! Quiero hacer un pedido.\n`;
+    mensaje += `Tipo de entrega: ${tipoEntrega === "mesa" ? "En mesa" : "A domicilio"}\n`;
+    mensaje += `${infoPedido}\n\n`;
+    mensaje += `Mi pedido es:\n`;
     pedido.forEach(producto => {
         mensaje += `- ${producto.nombre} - $${producto.precio}\n`;
     });
-    mensaje += `Total: $${totalPedido.textContent}\nGracias.`;
+    mensaje += `\nTotal: $${totalPedido.textContent}\nGracias.`;
 
     // Codificar el mensaje para la URL de WhatsApp
     const mensajeCodificado = encodeURIComponent(mensaje);
