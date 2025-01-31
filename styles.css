@@ -195,6 +195,20 @@ button.desplegable:hover {
 
 
 /* Estilos para el contenido desplegable */
+.contenido li.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+/* Efecto hover en los productos */
+.contenido li.producto:hover {
+    background-color: #333; /* Fondo oscuro al pasar el mouse */
+    color: #28a745; /* Color verde para el texto */
+}
 .contenido {
     max-height: 0; /* Altura inicial (oculto) */
     overflow: hidden; /* Oculta el contenido que se desborda */
@@ -222,8 +236,8 @@ button.desplegable:hover {
 
 /* Estilos para el nombre del producto */
 .nombre-producto {
-    flex: 1; /* Ocupa el espacio disponible */
-    margin-right: 10px; /* Margen derecho */
+    flex: 3; /* Ocupa el espacio disponible */
+    margin-right: 150px; /* Margen derecho */
 }
 
 /* Estilos para el precio */
@@ -421,7 +435,7 @@ input::placeholder {
     top: 0; /* Alineado arriba */
     width: 100%; /* Ancho completo */
     height: 100%; /* Altura completa */
-    background-color: #545d2e ; /* Fondo oscuro semitransparente */
+    background-color: #545d2e6b ; /* Fondo oscuro semitransparente */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
 }
@@ -430,12 +444,21 @@ input::placeholder {
 .modal.mostrar {
     display: flex; /* Usa flexbox para centrar */
 }
+.modal:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo ligeramente más claro */
+}
 
 /* Estilos para la imagen dentro del modal */
 .imagen-modal {
     max-width: 90%; /* Ancho máximo */
     max-height: 90%; /* Altura máxima */
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 100px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    
+}
+.imagen-modal:hover {
+    transform: scale(1.05); /* Escala ligeramente la imagen al pasar el mouse */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Sombra blanca alrededor de la imagen */
 }
 
 /* Estilos para el botón de cerrar el modal */
@@ -447,11 +470,13 @@ input::placeholder {
     font-size: 40px; /* Tamaño del texto */
     font-weight: bold; /* Texto en negrita */
     cursor: pointer; /* Cambia el cursor al pasar */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
 /* Cambia el color del botón al pasar el mouse */
 .cerrar-modal:hover {
     color: #ccc; /* Color gris */
+    transform: scale(1.2); /* Escala ligeramente el botón */
 }
 
 /* Estilos para el botón flotante de WhatsApp */
